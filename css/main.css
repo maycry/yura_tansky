@@ -42,13 +42,83 @@ html {
   line-height: 1.4;
 }
 
+p{
+  color: white;
+  font-size: 2.25rem;
+  line-height: 3.125rem;
+}
+
+img{
+  width: 100%;
+}
+
 
 /* ==========================================================================
   Menu
    ========================================================================== */
 
-.menu{
-  
+header{
+  position: fixed;
+  padding: 40px;
+  z-index: 1;
+  font-size: 1.375rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.logo{
+  float: left;
+}
+
+.menu ul{
+  margin: 0;
+  padding: 0;
+  text-align: right;
+}
+
+.menu li{
+  display: inline-block;
+  margin-left: 2rem;
+}
+
+header a {
+  color: white;
+  text-decoration: none;
+}
+
+
+/* ==========================================================================
+  Slide
+   ========================================================================== */
+
+section{
+  padding: 20px;
+}
+.slide{
+  height: 0;
+  overflow: hidden;
+  background-color: black;
+  width: 100%;
+  padding-top: 66.666%;
+  position: relative;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+.slide-inside{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.flexbox-centering {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 15%;
 }
 
 /*
