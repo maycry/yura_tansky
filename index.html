@@ -23,7 +23,7 @@
   <![endif]-->
 
   <header>
-    <div class="logo"><a href="#">Tansky</a></div>
+    <div class="logo"><a href="#">Yura Tansky</a></div>
     <div class="menu">
       <ul>
         <li><a href="#">About</a></li>
@@ -32,25 +32,68 @@
     </div>
   </header>
 
-  <section>
-    <div class="slide">
-      <div class="slide-inside">
-        <div class="flexbox-centering">
-          <p><b>Renders.</b> There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words.</p>
-        </div>
-      </div>
+  <article class="inset-m">
+    <section>
+      <h1>Designing A Smarter Keyboard</h1>
+      <p>At Grammarly I had an opportunity to work on a product that brings clear and mistake-free writing on mobile. Grammarly Keyboard replaces native mobile keyboard and augments writing with advanced grammar and punctuation suggestions.</p>
+    </section>
+    <!-- <img src="img/001-Smarter-Keyboard/smarter-keyboard-001.png"> -->
+    <div class="animated-img">
+      <video autoplay muted loop>
+      <source src="img/001-Smarter-Keyboard/smarter-keyboard-000.mp4" type="video/mp4">
+      </video>
     </div>
-    <div class="slide">
-      <div class="slide-inside">
-        <img src="img/slides/01-KaterynaTanska-Slide-001.png">
-      </div>
+    <section>
+      <h2>Problem</h2>
+      <p>The native mobile keyboard provides a basic set of spelling corrections. But it falls short when it comes to complex grammar, punctuations and clarity issues. That may lead to lack of confidence and reduced productivity for people that use their phones for important writing, like emails, blog posts and documents.</p>
+    </section>
+    <section>
+      <h2>Goals</h2>
+      <p>1. Elegantly combine core typing experience with Grammarly’s writing augmentations.<br>2. Build straightforward on boarding experience for quirky keyboard installation process.<br>3. Design consistent visual language for the product and supporting marketing materials.</p>
+    </section>
+    <section>
+      <h2>Cards</h2>
+      <p>Displaying writing suggestions in the limited format of the keyboard was one of first UX challenge our team stumble upon. There just wasn’t enough real estate to display writing suggestions.</p>
+      <p>To solve this problem we come up with hybrid approach. Solution was to use the bar above the keyboard to display both – text predictions and inline Grammarly cards. This idea allowed to made inline cards easy to notice and quick to use. People immediately see issues in their text and can correct them with one tap. </p>
+    </section>
+    <div class="animated-img">
+      <video autoplay muted loop>
+      <source src="img/001-Smarter-Keyboard/smarter-keyboard-003.mp4" type="video/mp4">
+      </video>
     </div>
-  </section>
+    <section>
+      <h2>Revision mode</h2>
+      <p>Inline cards were a great solution for the case when you want to send a quick short email. But what about longer forms of writing? We conducted survey that showed that there was a fraction of users who want to use Grammarly keyboard for articles, documents and essays.</p>
+      <p>With longer texts people make more grammatical mistakes. And navigating those issues in such a limited space could be hard. It  difficult to understand were in text issue occurred. To tackle this problem we introduced Revision mode. It replaces keyboard with full width cards. There is only one active card. We moved the cursor to show occurrence of the issue in the text. That allowed users to see clearly what correction and where would be made. </p>
+    </section>
+    <img src="img/001-Smarter-Keyboard/smarter-keyboard-004.png">
+    <section>
+      <h2>On boarding</h2>
+      <p>On boarding was the crucial part of the product. Installing keyboard is not a trivial task and for many users it was their first time doing this. If on-boarding is confusing people would just churn without getting any value from our product.</p>
+      <p>We designed many version of the flow and tweaked it a lot. One of the effective findings was adding video instructions on how to activate Grammarly Keyboard in the system settings and how to use it after installation.</p>
+    </section>
+    <img src="img/001-Smarter-Keyboard/smarter-keyboard-005.png">
+    <section>
+      <h2>Synonyms</h2>
+      <p>Synonyms feature is one of the unique differentiator of the keyboard. It allows to see synonyms for any word that is next to a blinking cursor. To make this feature more discoverable we also displayed synonyms for the last word user typed after a short pause.</p>
+    </section>
+    <img src="img/001-Smarter-Keyboard/smarter-keyboard-006.png">
+    <section>
+      <h2>Swipe to ignore</h2>
+      <p>For a case when user don’t want to apply correction they need an easy way to hide the irrelevant card. We designed swipe to Ignore feature that allowed users to swipe the card to hide it. To make this feature discoverable we created peeking animation to show that card is swipabale. </p>
+    </section>
+    <img src="img/001-Smarter-Keyboard/smarter-keyboard-007.png">
+    <section>
+      <h2>Emoji Search</h2>
+      <p>There are around 3000 emojis in Unicode Standard. When you are dealing with this amount of items you need an easy way to find this face palm emoji. I designed a behavior when search bar was used for entering search query and displaying results at the same time. This allowed to effectively use the real estate and provide users each emoji they needed.</p>
+    </section>
+    <img src="img/001-Smarter-Keyboard/smarter-keyboard-008.png">
+    
+  </article>
 
 
 
   <!-- Add your site or application content here -->
-  <p>Hello world! This is HTML5 Boilerplate.</p>
   <script src="js/vendor/modernizr-3.7.1.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
   <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')</script>

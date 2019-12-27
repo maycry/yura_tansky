@@ -7,30 +7,6 @@
  * Kroc Camen, and the H5BP dev community and team.
  */
 
-
- @font-face {
-    font-family: 'Sofia';
-    src: url('../webfonts/3982CB_0_0.eot'); /* IE9 Compat Modes */
-    src: url('../webfonts/3982CB_0_0.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-            url('../webfonts/3982CB_0_0.woff2') format('woff2'), /* Super Modern Browsers */
-            url('../webfonts/3982CB_0_0.woff') format('woff'), /* Pretty Modern Browsers */
-            url('../webfonts/3982CB_0_0.ttf')  format('truetype'); /* Safari, Android, iOS */
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
-@font-face {
-    font-family: 'Sofia';
-    src: url('../webfonts/3982D7_0_0.eot'); /* IE9 Compat Modes */
-    src: url('../webfonts/3982D7_0_0.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-            url('../webfonts/3982D7_0_0.woff2') format('woff2'), /* Super Modern Browsers */
-            url('../webfonts/3982D7_0_0.woff') format('woff'), /* Pretty Modern Browsers */
-            url('../webfonts/3982D7_0_0.ttf')  format('truetype'); /* Safari, Android, iOS */
-    font-weight: bold;
-    font-style: normal;
-    font-display: swap;
-}
-
 /* ==========================================================================
    Base styles: opinionated defaults
    ========================================================================== */
@@ -38,14 +14,26 @@
 html {
   color: #222;
   font-size: 1em;
-  font-family: Sofia, Helvetica;
+  font-family: Helvetica, sans-serif;
   line-height: 1.4;
+  -webkit-font-smoothing: antialiased;
 }
 
 p{
-  color: white;
-  font-size: 2.25rem;
-  line-height: 3.125rem;
+  font-size: 1.75rem;
+  line-height: 2.5rem;
+  margin: 1rem 0;
+}
+
+h1{
+  font-size: 2.625rem;
+  line-height: 3.4375rem;
+  margin-bottom: 1.25rem;
+}
+
+h2{
+  font-size: 1.75rem;
+  line-height: 2.5rem;
 }
 
 img{
@@ -58,10 +46,8 @@ img{
    ========================================================================== */
 
 header{
-  position: fixed;
-  padding: 40px;
-  z-index: 1;
-  font-size: 1.375rem;
+  padding: 20px;
+  font-size: 1.3125rem;
   width: 100%;
   box-sizing: border-box;
 }
@@ -82,43 +68,41 @@ header{
 }
 
 header a {
-  color: white;
+  color: black;
   text-decoration: none;
+  transition: 0.15s color;
+}
+
+header a:hover {
+  color: grey;
+}
+
+.inset-m{
+  padding: 20px;
 }
 
 
 /* ==========================================================================
-  Slide
+  Article
    ========================================================================== */
 
-section{
-  padding: 20px;
-}
-.slide{
-  height: 0;
-  overflow: hidden;
-  background-color: black;
-  width: 100%;
-  padding-top: 66.666%;
-  position: relative;
+article{
+  max-width: 1440px;
   margin: 0 auto;
-  margin-bottom: 20px;
 }
 
-.slide-inside{
-  position: absolute;
-  top: 0;
-  left: 0;
+article section{
+  width: 70%;
+  margin-top: 10rem;
+  margin-bottom: 4rem;
+}
+
+article section:first-child{
+  margin-top: 5rem;
+}
+
+video{
   width: 100%;
-  height: 100%;
-}
-
-.flexbox-centering {
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0 15%;
 }
 
 /*
@@ -291,8 +275,10 @@ textarea {
    Modify as content requires.
    ========================================================================== */
 
-@media only screen and (min-width: 35em) {
-  /* Style adjustments for viewports that meet the condition */
+@media only screen and (max-width: 900px) {
+  article section{
+    width: 100%;
+  }
 }
 
 @media print,
