@@ -26,9 +26,8 @@ p{
 }
 
 h1{
-  font-size: 2.625rem;
-  line-height: 3.4375rem;
-  margin-bottom: 1.25rem;
+  font-size: 4rem;
+  line-height: 4.625rem;
 }
 
 h2{
@@ -46,10 +45,9 @@ img{
    ========================================================================== */
 
 header{
-  padding: 20px;
-  font-size: 1.3125rem;
-  width: 100%;
-  box-sizing: border-box;
+  font-size: 1.5rem;
+  max-width: 1377px;
+  margin: 0 auto;
 }
 
 .logo{
@@ -87,18 +85,26 @@ header a:hover {
    ========================================================================== */
 
 article{
-  max-width: 1440px;
+  max-width: 1377px;
   margin: 0 auto;
 }
 
-article section{
-  width: 70%;
-  margin-top: 10rem;
-  margin-bottom: 4rem;
+article p, h1, h2{
+  width: 60%;
+  margin-top: 6rem;
+  margin-bottom: 6rem;
+}
+
+article h1{
+  margin-bottom: 2rem;
 }
 
 article section:first-child{
   margin-top: 5rem;
+}
+
+article img{
+  padding: 9px 0;
 }
 
 video{
