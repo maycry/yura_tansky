@@ -31,8 +31,8 @@ h1{
 }
 
 h2{
-  font-size: 1.75rem;
-  line-height: 2.5rem;
+  font-size: 2.875rem;
+  line-height: 4rem;
 }
 
 img{
@@ -52,6 +52,14 @@ header{
 
 .logo{
   float: left;
+}
+
+.logo a{
+  text-transform: uppercase;
+  font-style: normal;
+  font-weight: bold;
+  letter-spacing: 0.09rem;
+  font-size: 1.5rem;
 }
 
 .menu ul{
@@ -84,32 +92,55 @@ header a:hover {
   Article
    ========================================================================== */
 
-article{
+article, .featured{
   max-width: 1377px;
   margin: 0 auto;
 }
 
+article section{
+  margin-top: 7.5rem;
+  margin-bottom: 7.5rem;
+}
+
 article p, h1, h2{
   width: 60%;
-  margin-top: 6rem;
-  margin-bottom: 6rem;
 }
 
 article h1{
-  margin-bottom: 2rem;
+  margin-top: 4rem;
+  margin-bottom: 3rem;
 }
 
-article section:first-child{
-  margin-top: 5rem;
+article p{
+  margin: 2.5rem 0;
 }
 
-article img{
+article img, article .animated-img{
   padding: 9px 0;
 }
 
 video{
   width: 100%;
 }
+
+
+/* ==========================================================================
+  Featured
+   ========================================================================== */
+
+  .featured a{
+    display: block;
+    margin: 32px 0;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    color:#000;
+    text-decoration: none;
+  }
+  .featured a img{
+    margin-bottom: 0.5rem;
+  }
 
 /*
  * Remove text-shadow in selection highlight:
@@ -284,6 +315,26 @@ textarea {
 @media only screen and (max-width: 900px) {
   article section{
     width: 100%;
+  }
+
+  article p, h1, h2{
+    width: 100%;
+  }
+
+  h1{
+    font-size: 2.75rem;
+    line-height: 3.125rem;
+  }
+
+  h2{
+    font-size: 2.125rem;
+    line-height: 3rem;
+  }
+
+  p{
+    font-size: 1.5rem;
+    line-height: 2.35rem;
+    margin: 1rem 0;
   }
 }
 
