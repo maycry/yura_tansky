@@ -61,15 +61,12 @@ header{
   position: fixed;
   width: calc(100% - 4rem);
   justify-content: space-between;
-  top: 0;
+  top: 1rem;
 }
 
 .logo a{
-  text-transform: uppercase;
-  font-style: normal;
-  font-weight: bold;
-  letter-spacing: 0.09rem;
-  font-size: 1.5rem;
+  font-size: 2rem;
+  line-height: 2.75rem;
 }
 
 header a {
@@ -92,6 +89,10 @@ footer {
 /* ==========================================================================
   Article
    ========================================================================== */
+
+article.wrapper{
+  padding-top: 7rem;
+}
 
 article section{
   margin-top: 7.5rem;
@@ -128,7 +129,6 @@ video{
   width: 60%;
   font-size: 2rem;
   line-height: 2.75rem;
-  margin-top: 1rem;
   display: block;
 }
 
@@ -145,8 +145,8 @@ video{
 
 .social{
   width: 40%;
-  margin-top: 1rem;
   display: block;
+  margin-top: .25rem;
 }
 
 .social ul{
@@ -179,6 +179,7 @@ video{
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
+  position: relative;
 }
 
 .casestudies{
@@ -225,8 +226,9 @@ video{
 }*/
 
 .demo{
-  float: right;
+  position: absolute;
   width: 36%;
+  right: 2rem;
 }
 
 
@@ -511,11 +513,16 @@ textarea {
     line-height: 2.75rem;
   }
 
+  .demo{
+    position: static;
+    right: 0;
+  }
+
 }
 
 @media only screen and (max-height: 650px) {
   .index-bottom{
-    margin-top: 4rem;
+    margin-top: 19rem;
   }
 }
 
