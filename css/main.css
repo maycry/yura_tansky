@@ -46,8 +46,10 @@ img{
 
 header{
   font-size: 1.5rem;
-  max-width: 1377px;
+  max-width: 1616px;
   margin: 0 auto;
+  display: flex;
+  flex-flow: row wrap;
 }
 
 .logo{
@@ -84,7 +86,9 @@ header a:hover {
 }
 
 .inset-m{
-  padding: 20px;
+  padding: 8px 32px;
+  max-width: 1616px;
+  margin: 0 auto;
 }
 
 
@@ -93,7 +97,7 @@ header a:hover {
    ========================================================================== */
 
 article, .featured{
-  max-width: 1377px;
+  max-width: 1616px;
   margin: 0 auto;
 }
 
@@ -121,6 +125,86 @@ article img, article .animated-img{
 
 video{
   width: 100%;
+}
+
+
+/* ==========================================================================
+  Index
+   ========================================================================== */
+
+.about{
+  width: 60%;
+}
+
+.social{
+  width: 40%;
+  margin-top: 1rem;
+}
+
+.social ul{
+  margin: 0;
+  padding: 0;
+  text-align: right;
+}
+
+.social li{
+  display: inline-block;
+  margin-left: 2rem;
+}
+
+.social li a{
+  border-bottom: 1px solid grey;
+}
+
+.index-bottom{
+  margin-top: calc(100vh - 216px - 363px + 80px);
+  margin-bottom: 6rem;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.casestudies{
+  width: 60%;
+  float: left;
+}
+
+.casestudies ul{
+  margin: 0;
+  padding: 0;
+}
+
+.casestudies li{
+  display: block;
+  margin-left: 0;
+  margin-bottom: 1rem;
+}
+
+.casestudies li a{
+  font-size: 4rem;
+  line-height: 4.625rem;
+  font-weight: bold;
+  text-decoration: none;
+  background-image: linear-gradient(
+        180deg, rgba(0,0,0,0),
+        rgba(0,0,0,0) 84%, #888888 81.1%, #888888 85%,
+        rgba(0,0,0,0) 85.1%,
+        rgba(0,0,0,0)
+    );
+  color: #000000;
+  transition: all 0.2s;
+}
+
+.casestudies li a:hover{
+  color: #888888;
+}
+
+/*.casestudies li a:visited{
+  color: grey;
+}*/
+
+.demo{
+  float: right;
+  width: 33%;
 }
 
 
@@ -312,7 +396,7 @@ textarea {
    Modify as content requires.
    ========================================================================== */
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 800px) {
   article section{
     width: 100%;
   }
@@ -336,7 +420,56 @@ textarea {
     line-height: 2.35rem;
     margin: 1rem 0;
   }
+
+  .about, .casestudies{
+    width: 100%;
+    order: 2;
+  }
+
+  .social, .demo{
+    width: 100%;
+    order: 1;
+  }
+
+  .social{
+    margin-bottom: 2rem;
+    margin-top: 0;
+  }
+
+  .social ul li a{
+    font-size: 1.25rem;
+    line-height: 2rem;
+  }
+
+  .index-bottom{
+    margin-top: 6rem;
+  }
+
+  .inset-m{
+    padding: 16px 16px;
+  }
+
+  .casestudies{
+    margin-top: 4rem;
+  }
+
+  .casestudies li{
+    margin-bottom: 2rem;
+  }
+
+  .casestudies li a{
+    font-size: 2.75rem;
+    line-height: 3.125rem;
+  }
+
 }
+
+@media only screen and (max-height: 650px) {
+  .index-bottom{
+    margin-top: 4rem;
+  }
+}
+
 
 @media print,
   (-webkit-min-device-pixel-ratio: 1.25),
