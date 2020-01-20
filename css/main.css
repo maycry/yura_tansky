@@ -118,10 +118,9 @@ article h1{
 article p{
   margin: 2.5rem 0;
 }
-
-/*article img, article .animated-img{
-  padding: 9px 0;
-}*/
+article > img, article .animated-img{
+  margin: 0.5rem 0;
+}
 
 video{
   width: 100%;
@@ -131,8 +130,7 @@ video{
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 1rem;
-  margin-top: 1rem;
-  margin-top: 1rem;
+  margin: 0.5rem 0;
 }
 
 .gallery-2-2{
