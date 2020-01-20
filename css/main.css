@@ -67,7 +67,7 @@ header{
 
 header.wrapper.notSticky{
   position: static;
-  margin-top: 1rem;
+  margin-top: 0;
 }
 
 .logo a{
