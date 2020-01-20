@@ -520,7 +520,7 @@ textarea {
 
 }
 
-@media only screen and (max-height: 650px) {
+@media only screen and (max-height: 650px) and (min-width: 800px) {
   .index-bottom{
     margin-top: 19rem;
   }
