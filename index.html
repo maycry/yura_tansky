@@ -14,6 +14,9 @@
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/main.css">
 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="js/main.js"></script>
+
   <meta name="theme-color" content="#fafafa">
 </head>
 
@@ -22,8 +25,8 @@
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
   <![endif]-->
 
-  <header class="inset-m">
-    <div class="about"><b>I’m Tanskyi.</b><br>Product Designer at Grammarly passionate about building delightful products that people love to use everyday.</div>
+  <header class="wrapper">
+    <div class="about"><b><span class="shrinkOnScroll">I’m </span>Tanskyi<span class="hideOnScroll">.</span></b><br><span class="hideOnScroll">Product Designer at Grammarly passionate about building delightful products that people love to use everyday.</span></div>
     <div class="social">
       <ul>
         <li><a href="">LinkedIn</a></li>
@@ -32,13 +35,13 @@
     </div>
   </header>
 
-  <div class="index-bottom inset-m">
+  <div class="index-bottom wrapper">
     <div class="casestudies">
       <ul>
-        <li><a href="001-Smarter-Keyboard.html">Smart Mobile Keyboard</a></li>
-        <li><a href="003-Style.html">Writing Style Guide</a></li>
-        <li><a href="002-Marketing.html">Grammarly Marketing</a></li>
-        <li><a href="#">Mobile Gamification</a></li>
+        <li><a href="001-Smarter-Keyboard.html" data-url=img/001-Design-Keyboard/001-Intro.png><span>Smart Mobile Keyboard</span></a></li>
+        <li><a href="003-Style.html" data-url=img/003-Style/001-Intro.png><span>Writing Style Guide</span></a></li>
+        <li><a href="002-Marketing.html" data-url=img/002-Marketing/001-Intro.png><span>Grammarly Marketing</span></a></li>
+       <!--  <li><a href="002-Marketing.html" data-url=img/002-Marketing/001-Intro.png><span>Mobile Gamification</span></a></li> -->
       </ul>
     </div>
     <div class="demo">
@@ -46,7 +49,7 @@
     </div>
   </div>
 
-  <footer class="inset-m">
+  <footer class="wrapper">
     Yura Tanskyi, 2020
   </footer>
 

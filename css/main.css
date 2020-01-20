@@ -35,6 +35,11 @@ h2{
   line-height: 4rem;
 }
 
+h3{
+  font-size: 2rem;
+  line-height: 2.75rem;
+}
+
 img{
   width: 100%;
 }
@@ -44,22 +49,19 @@ img{
   Menu
    ========================================================================== */
 
-header{
-  font-size: 1.5rem;
+.wrapper{
   max-width: 1616px;
   margin: 0 auto;
+  padding: 8px 32px;
+}
+
+header{
   display: flex;
   flex-flow: row wrap;
-}
-
-footer {
-  margin-bottom: 2rem;
-  font-size: 1rem;
-  line-height: 1.5rem;
-}
-
-.logo{
-  float: left;
+  position: fixed;
+  width: calc(100% - 4rem);
+  justify-content: space-between;
+  top: 0;
 }
 
 .logo a{
@@ -68,17 +70,6 @@ footer {
   font-weight: bold;
   letter-spacing: 0.09rem;
   font-size: 1.5rem;
-}
-
-.menu ul{
-  margin: 0;
-  padding: 0;
-  text-align: right;
-}
-
-.menu li{
-  display: inline-block;
-  margin-left: 2rem;
 }
 
 header a {
@@ -91,21 +82,16 @@ header a:hover {
   color: grey;
 }
 
-.inset-m{
-  padding: 8px 32px;
-  max-width: 1616px;
-  margin: 0 auto;
+footer {
+  margin-bottom: 1rem!important;
+  font-size: 1rem;
+  line-height: 1.5rem;
 }
 
 
 /* ==========================================================================
   Article
    ========================================================================== */
-
-article, .featured{
-  max-width: 1616px;
-  margin: 0 auto;
-}
 
 article section{
   margin-top: 7.5rem;
@@ -143,11 +129,24 @@ video{
   font-size: 2rem;
   line-height: 2.75rem;
   margin-top: 1rem;
+  display: block;
+}
+
+.about .shrinkOnScroll{
+  font-size: 2rem;
+  opacity: 1;
+  transition: all .2s ease-in-out;
+}
+
+.about .shrinkOnScroll.animate{
+  font-size: 0rem;
+  opacity: 0;
 }
 
 .social{
   width: 40%;
   margin-top: 1rem;
+  display: block;
 }
 
 .social ul{
@@ -156,9 +155,11 @@ video{
   text-align: right;
 }
 
-.social li{
+.social ul li{
   display: inline-block;
   margin-left: 2rem;
+  font-size: 1.75rem;
+  line-height: 2.5rem;
 }
 
 .social li a{
@@ -173,7 +174,7 @@ video{
 }
 
 .index-bottom{
-  margin-top: calc(100vh - 216px - 363px + 80px);
+  margin-top: calc(100vh - 420px /*- 216px - 363px*/ + 80px);
   margin-bottom: 6rem;
   display: flex;
   flex-flow: row wrap;
@@ -190,25 +191,29 @@ video{
   padding: 0;
 }
 
-.casestudies li{
+.casestudies ul li{
   display: block;
   margin-left: 0;
-  margin-bottom: 1rem;
 }
 
-.casestudies li a{
+.casestudies ul li a{
+  display: inline-block;
+  padding-bottom: 1rem;
   font-size: 4rem;
   line-height: 4.625rem;
   font-weight: bold;
   text-decoration: none;
+  color: #000000;
+  transition: all 0.2s;
+}
+
+.casestudies ul li a span{
   background-image: linear-gradient(
         180deg, rgba(0,0,0,0),
         rgba(0,0,0,0) 84%, #888888 81.1%, #888888 85%,
         rgba(0,0,0,0) 85.1%,
         rgba(0,0,0,0)
     );
-  color: #000000;
-  transition: all 0.2s;
 }
 
 .casestudies li a:hover{
@@ -412,6 +417,20 @@ textarea {
    These examples override the primary ('mobile first') styles.
    Modify as content requires.
    ========================================================================== */
+@media only screen and (min-width: 800px) and (max-width: 1200px) {
+  .casestudies ul li a{
+    font-size: 3rem;
+    line-height: 4rem;
+  }
+
+  .demo{
+    width: 40%;
+  }
+
+  .casestudies{
+    width: 50%;
+  }
+}
 
 @media only screen and (max-width: 800px) {
   article section{
@@ -436,6 +455,11 @@ textarea {
     font-size: 1.5rem;
     line-height: 2.35rem;
     margin: 1rem 0;
+  }
+
+  header{
+    position: static;
+    width: auto;
   }
 
   .about, .casestudies{
@@ -474,7 +498,7 @@ textarea {
     margin-top: 0;
   }
 
-  .inset-m{
+  .wrapper{
     padding: 16px 16px;
   }
 
@@ -482,11 +506,7 @@ textarea {
     margin-top: 2rem;
   }
 
-  .casestudies li{
-    margin-bottom: 1.5rem;
-  }
-
-  .casestudies li a{
+  .casestudies ul li a{
     font-size: 2rem;
     line-height: 2.75rem;
   }
