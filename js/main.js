@@ -10,8 +10,13 @@ $(document).ready(function(){
 				$(".demo img").attr("src", "img/Index/Material Test 002.png");
 		})
 
+		checkScroll();
 		$(window).scroll(function(){
-		    var scrollPos = $(document).scrollTop();
+		   checkScroll();
+		});
+
+		function checkScroll(){
+			 var scrollPos = $(document).scrollTop();
 
 		    if (scrollPos > 0) {
 		    	$(".hideOnScroll").fadeOut(200);
@@ -20,6 +25,6 @@ $(document).ready(function(){
 		    	$(".hideOnScroll").fadeIn(200);
 		    	$(".shrinkOnScroll").removeClass("animate");
 		    }
-		});
+		}
 	}
 });
