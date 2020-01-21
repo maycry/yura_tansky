@@ -524,13 +524,14 @@ textarea {
   .social ul li{
     margin-left: 0.75rem;
   }
-    .social ul li:first-child{
+  
+  .social ul li:first-child{
     margin-left: 0;
   }
 
   .social ul li a{
     font-size: 1.3rem;
-    line-height: 2rem;
+    line-height: 1.9rem;
   }
 
   .index-bottom{
