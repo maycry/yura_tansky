@@ -1,0 +1,31 @@
+{
+  "name": "yura_tansky",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maycry/yura_tansky.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/maycry/yura_tansky/issues"
+  },
+  "homepage": "https://github.com/maycry/yura_tansky#readme",
+  "dependencies": {
+    "next": "^9.2.0",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
+  },
+  "devDependencies": {
+    "@types/node": "^13.1.8",
+    "@types/react": "^16.9.19",
+    "typescript": "^3.7.5"
+  }
+}
