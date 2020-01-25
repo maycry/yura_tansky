@@ -1,10 +1,10 @@
-import { Header } from './components/header';
-import { Footer } from './components/footer';
+import Header from './components/header';
+import Footer from './components/footer';
 
 function Marketing() {
   return (
     <div>
-      <Header isMain={false} />
+      <Header />
 
       <article className="wrapper">
         <h1>Grammarly.com And More</h1>

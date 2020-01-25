@@ -1,10 +1,10 @@
-import { Header } from './components/header';
-import { Footer } from './components/footer';
+import Header from './components/header';
+import Footer from './components/footer';
 
 function StyleGuide() {
   return (
     <div>
-      <Header isMain={false} />
+      <Header />
       <article className="wrapper">
         <h1>Grammarly Dynamic Writing Style Guides</h1>
         <img src="img/003-Style/001-Intro.png" />

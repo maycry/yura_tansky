@@ -1,16 +1,18 @@
 import { useState } from 'react';
-import { Header } from './components/header';
-import { Footer } from './components/footer';
 import Link from 'next/link';
+import Header from './components/main-header';
+import Footer from './components/footer';
 
 const defaultImg = 'img/Index/Material Test 002.png';
 
 function HomePage() {
   const [heroImg, setHeroImg] = useState(defaultImg);
   const setDefaultImage = () => setHeroImg(defaultImg);
+
   return (
     <div>
-      <Header isMain />
+      <Header />
+
       <div className="index-bottom wrapper">
         <div className="casestudies">
           <ul>

@@ -1,10 +1,10 @@
-import { Header } from './components/header';
-import { Footer } from './components/footer';
+import Header from './components/header';
+import Footer from './components/footer';
 
 function SmarterKeyboard() {
   return (
     <div>
-      <Header isMain={false} />
+      <Header />
       <article className="wrapper">
         <h1>Designing a Smarter Keyboard</h1>
         <img src="img/001-Design-Keyboard/001-Intro.png" />
