@@ -77,7 +77,7 @@
     if (sceneWidth > 1200) {
       sceneHeight = window.innerHeight;
       sceneWidth /= 2; 
-      camera.position.z = 220;
+      camera.position.z = 240;
     }
 
     renderer.setSize(sceneWidth,sceneHeight);
@@ -103,7 +103,7 @@
   renderer.setClearColor("#ffffff");
   renderer.setSize(sceneWidth,sceneHeight);
   renderer.shadowMap.type = THREE.PCFSoftShadowMap;
-  //renderer.shadowMap.enabled = true;
+  renderer.shadowMap.enabled = true;
   setWindowWidth();
 
   document.body.appendChild(renderer.domElement);
@@ -121,8 +121,8 @@
   var ambientLight = new THREE.AmbientLight(0xFFFFFF, .9);
   frontalLight.position.set(-60,250,30);
   frontalLight.castShadow = true;
-  frontalLight.shadow.mapSize.width = 2048;
-  frontalLight.shadow.mapSize.height = 2048;
+  frontalLight.shadow.mapSize.width = 4096;
+  frontalLight.shadow.mapSize.height = 4096;
   sideLight.position.set(-50,-200,-40);
   scene.add(frontalLight);
   scene.add(sideLight);
