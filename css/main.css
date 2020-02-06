@@ -257,11 +257,6 @@ video{
   right: 2rem;
 }
 
-body { 
-  margin: 0; 
-  height: 100vh;
-}
-
 canvas { 
   display: block;
   position: fixed;
@@ -575,7 +570,7 @@ textarea {
   }
 
   .casestudies{
-    margin-top: 12rem;
+    margin-top: 8rem;
   }
 
   .casestudies ul li a{
@@ -590,6 +585,10 @@ textarea {
 
   .gallery{
     grid-template-columns: 1fr;
+  }
+
+  canvas{
+    top: 12rem;
   }
 
 }

@@ -71,9 +71,11 @@
   var setWindowWidth = function() {
     sceneWidth = window.innerWidth;
     sceneHeight = window.innerHeight;
-    camera.position.z = 300;
+    sceneHeight = sceneWidth;
+    camera.position.z = 250;
 
     if (sceneWidth > 1200) {
+      sceneHeight = window.innerHeight;
       sceneWidth /= 2; 
       camera.position.z = 220;
     }
@@ -88,6 +90,10 @@
   var scene = new THREE.Scene();
   var sceneWidth = window.innerWidth;
   var sceneHeight = window.innerHeight;
+  var mouseX = 0;
+  var mouseY = 0;
+  var targetX = 0;
+	var targetY = 0;
 
   // Create a new Perspective Camera
   var camera = new THREE.PerspectiveCamera(10,sceneWidth/sceneHeight,0.1,1000)
@@ -106,6 +112,8 @@
   window.addEventListener('resize', () => {
     setWindowWidth();
   })
+
+  document.addEventListener( 'mousemove', onDocumentMouseMove, false );
 
   // Add a light
   var frontalLight = new THREE.PointLight(0xFFFFFF, .35, 1000);
@@ -149,8 +157,25 @@
 
   var render = function() {
       requestAnimationFrame(render);
+
       ourObj.rotation.y -= .005;
+
+      targetX = mouseX * .001;
+			targetY = mouseY * .001;
+
+			camera.rotation.y = 0.01 * ( targetX );
+      camera.rotation.x = 0.01 * ( targetY );
+
       renderer.render(scene, camera);
+  }
+
+  function onDocumentMouseMove( event ) {
+
+    mouseX = ( event.clientX - sceneWidth/2 );
+    mouseY = ( event.clientY - sceneHeight/2 );
+
+    console.log(mouseX)
+
   }
 
   // Call this to render the entire scene
