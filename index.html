@@ -93,7 +93,10 @@
   var mouseX = 0;
   var mouseY = 0;
   var targetX = 0;
-	var targetY = 0;
+  var targetY = 0;
+  var switcherToggle = false;
+  
+  
 
   // Create a new Perspective Camera
   var camera = new THREE.PerspectiveCamera(10,sceneWidth/sceneHeight,0.1,1000)
@@ -114,6 +117,56 @@
   })
 
   document.addEventListener( 'mousemove', onDocumentMouseMove, false );
+
+  var raycaster = new THREE.Raycaster();
+	var mouse = new THREE.Vector2( 1, 1 );
+  
+  renderer.domElement.addEventListener("click", onclick, false);
+  var selectedObject;
+
+  function onclick(event) {
+    mouse.x = ( (event.clientX - sceneWidth) / sceneWidth ) * 2 - 1;
+		mouse.y = - ( event.clientY / sceneHeight ) * 2 + 1;
+    raycaster.setFromCamera(mouse, camera);
+    var intersects;
+    var flag = false;
+    var objects = []
+   
+    console.log(event.clientX -sceneWidth)
+    console.log(sceneWidth)
+    console.log(mouse.x)
+    ourObj.traverse(function(child){
+      intersects = raycaster.intersectObject( child );
+      if (intersects.length > 0) {
+        objects.push( { child } );
+      }
+    });
+
+    if (objects.length > 0){
+      var tl = new TimelineMax();
+      if (switcherToggle) {
+        TweenLite.to(ourObj.children[0].position, 2, {y: 0, x:0, z: 0, ease: Expo.easeOut});
+        TweenLite.to(ourObj.children[1].material.color, 2, {r: 0.18645499646664, g:0.88999998569489, b: 0.06230000033975, ease: Expo.easeOut});
+        TweenLite.to(ambientLight, 2, {intensity:0.9, ease: Expo.easeOut});
+        TweenLite.to(frontalLight, 2, {intensity:0.35, ease: Expo.easeOut});
+        TweenLite.to(sideLight, 2, {intensity:0.2, ease: Expo.easeOut});
+        renderer.setClearColor("#ffffff");
+        $("html").toggleClass("dark");
+        switcherToggle = false;
+      } else {
+        TweenLite.to(ourObj.children[0].position, 2, {y: 0, x:20, z: 0, ease: Expo.easeOut});
+        TweenLite.to(ourObj.children[1].material.color, 2, {r: 1, g: 1, b: 1, ease: Expo.easeOut});
+        TweenLite.to(ambientLight, 2, {intensity:0.1, ease: Expo.easeOut});
+        TweenLite.to(frontalLight, 2, {intensity:0.1, ease: Expo.easeOut});
+        TweenLite.to(sideLight, 2, {intensity:0.1, ease: Expo.easeOut});
+        renderer.setClearColor("#000000");
+        $("html").toggleClass("dark");
+        switcherToggle = true;
+      }
+      
+    }
+
+  }
 
   // Add a light
   var frontalLight = new THREE.PointLight(0xFFFFFF, .35, 1000);
@@ -157,9 +210,10 @@
 
   var render = function() {
       requestAnimationFrame(render);
-
-      ourObj.rotation.y -= .005;
-
+      if (ourObj) {
+        ourObj.rotation.y -= .005;
+      }
+      
       targetX = mouseX * .001;
 			targetY = mouseY * .001;
 
@@ -173,9 +227,6 @@
 
     mouseX = ( event.clientX - sceneWidth/2 );
     mouseY = ( event.clientY - sceneHeight/2 );
-
-    console.log(mouseX)
-
   }
 
   // Call this to render the entire scene
