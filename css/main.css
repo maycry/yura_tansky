@@ -257,6 +257,25 @@ video{
   right: 2rem;
 }
 
+body { 
+  margin: 0; 
+  height: 100vh;
+}
+
+canvas { 
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: -1;
+  user-select: none;
+  -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    outline: none;
+
+}
+  
+
 
 /* ==========================================================================
   Featured
