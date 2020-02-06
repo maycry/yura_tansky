@@ -264,14 +264,14 @@ body {
 
 canvas { 
   display: block;
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
   z-index: -1;
   user-select: none;
   -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    outline: none;
+  -webkit-user-select: none;
+  outline: none;
 
 }
   
@@ -575,7 +575,7 @@ textarea {
   }
 
   .casestudies{
-    margin-top: 2rem;
+    margin-top: 12rem;
   }
 
   .casestudies ul li a{

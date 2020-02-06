@@ -2,13 +2,13 @@ $(document).ready(function(){
   
   if ($(window).width() > 800) {
     
-    $(".casestudies ul li a").hover(
-      function(){
-        $(".demo img").attr("src", $(this).data('url'));
-      },
-      function(){
-        $(".demo img").attr("src", "");
-    })
+    // $(".casestudies ul li a").hover(
+    //   function(){
+    //     $(".demo img").attr("src", $(this).data('url'));
+    //   },
+    //   function(){
+    //     $(".demo img").attr("src", "img/Index/Material Test 002.png");
+    // })
 
     checkScroll();
 
