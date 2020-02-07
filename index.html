@@ -31,7 +31,7 @@
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
   <![endif]-->
 
-  <header class="wrapper">
+  <header class="index-top wrapper">
     <div class="about"><b><span class="shrinkOnScroll">I’m </span>Tanskyi<span class="hideOnScroll">.</span></b><br><span class="hideOnScroll">Product Designer at Grammarly passionate about building delightful products that people love to use everyday.</span></div>
     <div class="social">
       <ul>
@@ -126,15 +126,16 @@
 
   function onclick(event) {
     mouse.x = ( (event.clientX - sceneWidth) / sceneWidth ) * 2 - 1;
+    if (sceneWidth < 1200) {
+      mouse.x = ( event.clientX / sceneWidth ) * 2 - 1;
+    }
+    
 		mouse.y = - ( event.clientY / sceneHeight ) * 2 + 1;
     raycaster.setFromCamera(mouse, camera);
     var intersects;
     var flag = false;
     var objects = []
-   
-    console.log(event.clientX -sceneWidth)
-    console.log(sceneWidth)
-    console.log(mouse.x)
+    
     ourObj.traverse(function(child){
       intersects = raycaster.intersectObject( child );
       if (intersects.length > 0) {

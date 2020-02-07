@@ -17,6 +17,7 @@ html {
   font-family: Helvetica, sans-serif;
   line-height: 1.4;
   -webkit-font-smoothing: antialiased;
+  pointer-events: none;
 }
 
 p{
@@ -160,6 +161,10 @@ video{
   Index
    ========================================================================== */
 
+.index-top{
+  
+}
+
 .about{
   width: 60%;
   font-size: 2rem;
@@ -204,6 +209,7 @@ video{
         rgba(0,0,0,0)
     );
   transition: all 0.2s;
+  pointer-events: auto;
 }
 
 .index-bottom{
@@ -239,6 +245,7 @@ video{
   text-decoration: none;
   color: inherit;
   transition: all 0.2s;
+  pointer-events: auto;
 }
 
 .casestudies ul li a span{
@@ -274,7 +281,7 @@ canvas {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   outline: none;
-
+  pointer-events: auto;
 }
   
 
