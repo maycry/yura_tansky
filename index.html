@@ -199,20 +199,24 @@
           object.castShadow = true;
           object.receiveShadow = true;
           object.rotation.x = THREE.Math.degToRad( 180 ); //P
-          object.rotation.y = THREE.Math.degToRad( -40 ); //-H
+          object.rotation.y = THREE.Math.degToRad( -10 ); //-H
           object.rotation.z = THREE.Math.degToRad( -245 ); //-B
           object.traverse(function(child){child.castShadow = true; child.receiveShadow = true; });
+          var tl = new TimelineLite();
+          tl.to(ourObj.rotation, 10, {y:-3, repeat:-1, yoyo:true, ease: Power1.easeInOut});
       });
       
   });
   
   //controls = new THREE.OrbitControls( camera, renderer.domElement );
 
+
+
   var render = function() {
       requestAnimationFrame(render);
-      if (ourObj) {
-        ourObj.rotation.y -= .005;
-      }
+      // if (ourObj) {
+      //   ourObj.rotation.y -= .005;
+      // }
       
       targetX = mouseX * .001;
 			targetY = mouseY * .001;
