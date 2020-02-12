@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" lang="">
+<html class="no-js events" lang="">
 
 <head>
   <meta charset="utf-8">
@@ -49,6 +49,7 @@
         <li><a class="menu-link" href="001-Smarter-Keyboard.html" data-url=img/001-Design-Keyboard/001-Intro.png><span>Smart Mobile Keyboard</span></a></li>
         <li><a class="menu-link" href="003-Style.html" data-url=img/003-Style/001-Intro.png><span>Writing Style Guide</span></a></li>
         <li><a class="menu-link" href="002-Marketing.html" data-url=img/002-Marketing/001-Intro.png><span>Grammarly Marketing</span></a></li>
+        <li><a class="menu-link" href="004-Kateryna.html" data-url=img/002-Marketing/001-Intro.png><span>Kateryna Tanska Branding</span></a></li>
        <!--  <li><a href="002-Marketing.html" data-url=img/002-Marketing/001-Intro.png><span>Mobile Gamification</span></a></li> -->
       </ul>
     </div>
@@ -126,9 +127,9 @@
 
   function onclick(event) {
     mouse.x = ( (event.clientX - sceneWidth) / sceneWidth ) * 2 - 1;
-    if (sceneWidth < 1200) {
-      mouse.x = ( event.clientX / sceneWidth ) * 2 - 1;
-    }
+    // if (sceneWidth < 1200) {
+    //   mouse.x = ( event.clientX / sceneWidth ) * 2 - 1;
+    // }
     
 		mouse.y = - ( event.clientY / sceneHeight ) * 2 + 1;
     raycaster.setFromCamera(mouse, camera);

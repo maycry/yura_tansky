@@ -17,6 +17,10 @@ html {
   font-family: Helvetica, sans-serif;
   line-height: 1.4;
   -webkit-font-smoothing: antialiased;
+  
+}
+
+html.events{
   pointer-events: none;
 }
 
@@ -40,6 +44,11 @@ h2{
 h3{
   font-size: 2rem;
   line-height: 2.75rem;
+}
+
+h4{
+  font-size: 1.5rem;
+  line-height: 2.625rem;
 }
 
 img{
@@ -128,6 +137,28 @@ article h1{
 article p{
   margin: 2.5rem 0;
 }
+
+article .col-2{
+  float: left;
+  width: 35%;
+  margin-right: 3rem;
+}
+
+article .col-2 p{
+  font-size: 1.5rem;
+  line-height: 2.625rem;
+  width: 100%;
+}
+
+article .col-2 p{
+  margin: 0;
+}
+
+article .col-2 h4{
+  margin: 0;
+  margin-top: 3rem;
+}
+
 article > img, article .animated-img{
   margin: 0.5rem 0;
 }
@@ -213,7 +244,7 @@ video{
 }
 
 .index-bottom{
-  margin-top: calc(100vh - 420px /*- 216px - 363px*/ + 80px);
+  margin-top: calc(100vh - 370px /*- 216px - 363px*/ + 80px);
   margin-bottom: 6rem;
   display: flex;
   flex-flow: row wrap;
@@ -507,6 +538,16 @@ textarea {
     line-height: 3.125rem;
     margin-top: 3rem;
     margin-bottom: 1.5rem;
+  }
+
+  article .col-2{
+    float: none;
+    width: 100%;
+  }
+  
+  article .col-2 h4{
+    margin: 0;
+    margin-top: 2rem;
   }
 
   h2{
