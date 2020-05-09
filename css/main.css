@@ -74,14 +74,15 @@ html.dark {
 /* ==========================================================================
   Menu
    ========================================================================== */
-
+.fixed-header{
+  position: fixed;
+  top: 1rem;
+  width: 100%;
+}
 header{
   display: flex;
   flex-flow: row wrap;
-  position: fixed;
-  width: calc(100% - 4rem);
   justify-content: space-between;
-  top: 1rem;
 }
 
 header.wrapper.notSticky{
@@ -561,7 +562,7 @@ textarea {
     margin: 1rem 0;
   }
 
-  header{
+ .fixed-header{
     position: static;
     width: auto;
   }
