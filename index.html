@@ -15,13 +15,8 @@
   <link rel="stylesheet" href="css/main.css">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/110/three.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
   
   <script src="js/main.js"></script>
-  <script src="js/mat.js"></script>
-  <script src="js/obj.js"></script>   
-  <script src="js/orbit.js"></script>   
 
   <meta name="theme-color" content="#fafafa">
 </head>
@@ -31,9 +26,10 @@
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
   <![endif]-->
 
+
   <div class="fixed-header">
     <header class="index-top wrapper">
-      <div class="about"><b><span class="shrinkOnScroll">I’m </span>Tanskyi<span class="hideOnScroll">.</span></b><br><span class="hideOnScroll">Product Designer at Grammarly passionate about building delightful products that people love to use everyday.</span></div>
+      <div class="about"><span class="shrinkOnScroll">I’m </span>Tanskyi<span class="hideOnScroll">.</span><br><span class="hideOnScroll">Product Designer at Grammarly passionate about building delightful products that people love to use everyday.</span></div>
       <div class="social">
         <ul>
            <ul>
@@ -69,179 +65,5 @@
   <script src="js/plugins.js"></script>
   <script src="js/main.js"></script>
 </body>
-
-<script>
-
-  var setWindowWidth = function() {
-    sceneWidth = window.innerWidth;
-    sceneHeight = window.innerHeight;
-    sceneHeight = sceneWidth;
-    camera.position.z = 250;
-
-    if (sceneWidth > 1200) {
-      sceneHeight = window.innerHeight;
-      sceneWidth /= 2; 
-      camera.position.z = 240;
-    }
-
-    renderer.setSize(sceneWidth,sceneHeight);
-    camera.aspect = sceneWidth / sceneHeight;
-
-    camera.updateProjectionMatrix();
-  }
-
-  // Create the Three.js Scene
-  var scene = new THREE.Scene();
-  var sceneWidth = window.innerWidth;
-  var sceneHeight = window.innerHeight;
-  var mouseX = 0;
-  var mouseY = 0;
-  var targetX = 0;
-  var targetY = 0;
-  var switcherToggle = false;
-  
-  
-
-  // Create a new Perspective Camera
-  var camera = new THREE.PerspectiveCamera(10,sceneWidth/sceneHeight,0.1,1000)
-
-  // Create a Full Screen WebGL Renderer
-  var renderer = new THREE.WebGLRenderer({antialias: true, alpha: true});
-  renderer.setClearColor("#ffffff");
-  renderer.setSize(sceneWidth,sceneHeight);
-  renderer.shadowMap.type = THREE.PCFSoftShadowMap;
-  renderer.shadowMap.enabled = true;
-  setWindowWidth();
-
-  document.body.appendChild(renderer.domElement);
-
-  // Make sure the project is responsive based on window resizing
-  window.addEventListener('resize', () => {
-    setWindowWidth();
-  })
-
-  document.addEventListener( 'mousemove', onDocumentMouseMove, false );
-
-  var raycaster = new THREE.Raycaster();
-	var mouse = new THREE.Vector2( 1, 1 );
-  
-  renderer.domElement.addEventListener("click", onclick, false);
-  var selectedObject;
-
-  function onclick(event) {
-    mouse.x = ( (event.clientX - sceneWidth) / sceneWidth ) * 2 - 1;
-    // if (sceneWidth < 1200) {
-    //   mouse.x = ( event.clientX / sceneWidth ) * 2 - 1;
-    // }
-    
-		mouse.y = - ( event.clientY / sceneHeight ) * 2 + 1;
-    raycaster.setFromCamera(mouse, camera);
-    var intersects;
-    var flag = false;
-    var objects = []
-    
-    ourObj.traverse(function(child){
-      intersects = raycaster.intersectObject( child );
-      if (intersects.length > 0) {
-        objects.push( { child } );
-      }
-    });
-
-    if (objects.length > 0){
-      var tl = new TimelineMax();
-      if (switcherToggle) {
-        TweenLite.to(ourObj.children[0].position, 2, {y: 0, x:0, z: 0, ease: Expo.easeOut});
-        TweenLite.to(ourObj.children[1].material.color, 2, {r: 0.18645499646664, g:0.88999998569489, b: 0.06230000033975, ease: Expo.easeOut});
-        TweenLite.to(ambientLight, 2, {intensity:0.9, ease: Expo.easeOut});
-        TweenLite.to(frontalLight, 2, {intensity:0.35, ease: Expo.easeOut});
-        TweenLite.to(sideLight, 2, {intensity:0.2, ease: Expo.easeOut});
-        renderer.setClearColor("#ffffff");
-        $("html").toggleClass("dark");
-        switcherToggle = false;
-      } else {
-        TweenLite.to(ourObj.children[0].position, 2, {y: 0, x:20, z: 0, ease: Expo.easeOut});
-        TweenLite.to(ourObj.children[1].material.color, 2, {r: 1, g: 1, b: 1, ease: Expo.easeOut});
-        TweenLite.to(ambientLight, 2, {intensity:0.1, ease: Expo.easeOut});
-        TweenLite.to(frontalLight, 2, {intensity:0.1, ease: Expo.easeOut});
-        TweenLite.to(sideLight, 2, {intensity:0.1, ease: Expo.easeOut});
-        renderer.setClearColor("#000000");
-        $("html").toggleClass("dark");
-        switcherToggle = true;
-      }
-      
-    }
-
-  }
-
-  // Add a light
-  var frontalLight = new THREE.PointLight(0xFFFFFF, .35, 1000);
-  var sideLight = new THREE.PointLight(0xFFFFFF, 0.2, 1000);
-  var ambientLight = new THREE.AmbientLight(0xFFFFFF, .9);
-  frontalLight.position.set(-60,250,30);
-  frontalLight.castShadow = true;
-  frontalLight.shadow.mapSize.width = 4096;
-  frontalLight.shadow.mapSize.height = 4096;
-  sideLight.position.set(-50,-200,-40);
-  scene.add(frontalLight);
-  scene.add(sideLight);
-  scene.add(ambientLight);
-
-  // Defining a variable for our model
-  var ourObj;
-
-  // Create a material
-  var mtlLoader = new THREE.MTLLoader();
-  mtlLoader.load('model/Switcher.mtl', function (materials) {
-
-      materials.preload();
-
-      // Load the object
-      var objLoader = new THREE.OBJLoader();
-      objLoader.setMaterials(materials);
-      objLoader.load('model/Switcher.obj', function (object) {
-          scene.add(object);
-          ourObj = object;
-          object.castShadow = true;
-          object.receiveShadow = true;
-          object.rotation.x = THREE.Math.degToRad( 180 ); //P
-          object.rotation.y = THREE.Math.degToRad( -10 ); //-H
-          object.rotation.z = THREE.Math.degToRad( -245 ); //-B
-          object.traverse(function(child){child.castShadow = true; child.receiveShadow = true; });
-          var tl = new TimelineLite();
-          tl.to(ourObj.rotation, 10, {y:-3, repeat:-1, yoyo:true, ease: Power1.easeInOut});
-      });
-      
-  });
-  
-  //controls = new THREE.OrbitControls( camera, renderer.domElement );
-
-
-
-  var render = function() {
-      requestAnimationFrame(render);
-      // if (ourObj) {
-      //   ourObj.rotation.y -= .005;
-      // }
-      
-      targetX = mouseX * .001;
-			targetY = mouseY * .001;
-
-			camera.rotation.y = 0.01 * ( targetX );
-      camera.rotation.x = 0.01 * ( targetY );
-
-      renderer.render(scene, camera);
-  }
-
-  function onDocumentMouseMove( event ) {
-
-    mouseX = ( event.clientX - sceneWidth/2 );
-    mouseY = ( event.clientY - sceneHeight/2 );
-  }
-
-  // Call this to render the entire scene
-  render();
-
-  console.log(scene)
-</script>
 
 </html>
