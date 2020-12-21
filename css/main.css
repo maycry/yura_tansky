@@ -115,7 +115,7 @@ footer {
   width: 60%;
   height: 100%;
   position: fixed;
-  z-index: 0;
+  z-index: -1;
   top: 0;
   right: 0;
 }
@@ -651,7 +651,6 @@ textarea {
 
   .backgroundEmbed{
     width: 100%;
-    z-index: -1;
     position: initial;
     height: 500px;
   }
