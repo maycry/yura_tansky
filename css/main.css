@@ -527,6 +527,10 @@ textarea {
 }
 
 @media only screen and (max-width: 800px) {
+  html{
+    overflow-x: hidden;
+  }
+
   article section{
     width: 100%;
     margin-top: 3.5rem;
