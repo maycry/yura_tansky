@@ -1,5 +1,4 @@
 $(document).ready(function(){
-
   
   if ($(window).width() > 800) {
 
@@ -11,13 +10,22 @@ $(document).ready(function(){
 
     function checkScroll(){
       var scrollPos = $(document).scrollTop();
-      if (scrollPos > 0) {
-        $(".hideOnScroll").fadeOut(200);
-        $(".shrinkOnScroll").addClass("animate");
+      console.log(scrollPos);
+      if(scrollPos < 500) {
+        $(".above-fold .header").css("padding-top", scrollPos+20+"px")
+        $(".hero").css("opacity", (400-scrollPos)/400)
       } else {
-        $(".hideOnScroll").fadeIn(200);
-        $(".shrinkOnScroll").removeClass("animate");
+        $(".above-fold .header").css("padding-top", "530px")
+        $(".hero").css("opacity", 0)
       }
     }
+
+    $( ".projects" ).click(function() {
+      p = $( ".projects" ).position().top;
+      $('html, body').animate({
+          scrollTop: 500
+       }, 500);
+
+    });
   }
 });
