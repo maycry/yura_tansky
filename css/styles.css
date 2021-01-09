@@ -34,6 +34,9 @@ a, a:visited{
 }
 
 /*---------Index---------*/
+.wrapper{
+	padding: 0 30px;
+}
 
 .above-fold{
 	display: flex;
@@ -41,8 +44,9 @@ a, a:visited{
 	height: 100vh;
 }
 
-.wrapper{
-	padding: 0 30px;
+.above-fold .header{
+	position: sticky;
+	top: 0px;
 }
 
 .header{
@@ -51,6 +55,7 @@ a, a:visited{
 	padding: 20px 30px;
 	align-items: baseline;
 	gap: 20px;
+	background: white;
 }
 
 .header-col-1{
@@ -98,16 +103,19 @@ a, a:visited{
 	flex: 1;
 	padding: 0 30px;
 	display: flex;
+	z-index: -1;
 }
 
 .hero{
 	width: 100%;
 	flex: 1;
-	background-color: #aaa;
 	border-radius: 20px;
+	background-color: #aaa;
 	background-image: url(../img/index-hero.jpg);
 	background-size: cover;
 	background-position: center center;
+	background-repeat: no-repeat;
+    
 }
 
 .projects{
@@ -207,14 +215,11 @@ h4{
 
 img{
   width: 100%;
+  border-radius: 20px;
 }
 
 .wrapper{
   padding: 30px;
-}
-
-img{
-  width: 100%;
 }
 
 article.wrapper{
@@ -267,6 +272,7 @@ article > img, article .animated-img{
 
 video{
   width: 100%;
+  border-radius: 20px;
 }
 
 .gallery{
