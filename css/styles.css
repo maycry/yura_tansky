@@ -308,6 +308,11 @@ video{
 		width: 100%;
 	}
 
+	.above-fold .header{
+		position: static;
+		top: auto;
+	}
+
 	.header-col-2{
 		font-size: 28px;
 		line-height: 36px;
